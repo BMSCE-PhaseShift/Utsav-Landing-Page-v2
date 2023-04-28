@@ -34,6 +34,10 @@
   font-family: "Cinzel Decorative", sans-serif;
 }
 
+.space-mono-font {
+  font-family: "Space Mono", monospace;
+}
+
 .my-bg {
   background: #101016;
 }
