@@ -4,75 +4,101 @@ import { motion } from "framer-motion";
 
 import styles from "../styles";
 import { navVariants } from "../utils/motion";
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const Navbar = () => (
-	<motion.nav
-		variants={navVariants}
-		initial="hidden"
-		whileInView="show"
-		className={`${styles.xPaddings} py-5 relative`}
-	>
-		<div className="absolute w-[50%] inset-0 gradient-01" />
+const navigation = [
+	{ name: "Home", href: "#", current: true },
+	{ name: "Events", href: "#events", current: false },
+	{ name: "Theme", href: "#theme", current: false },
+	{ name: "About", href: "#about", current: false },
+	{ name: "Contact Us", href: "#contact", current: false },
+];
 
-		<div className={`${styles.innerWidth} mx-auto flex justify-between gap-8`}>
-			<img
-				src="/search.svg"
-				alt="search"
-				className="w-[24px] h-[24px] object-contain"
-			/>
-			<h2 className="font-semibold text-[24px] leading-[30px] text-white">
-				NAVANEETH
-			</h2>
-			<img
-				src="/menu.svg"
-				alt="menu"
-				className="w-[24px] h-[24px] object-contain"
-			/>
-		</div>
+function classNames(...classes) {
+	return classes.filter(Boolean).join(" ");
+}
 
-		{/* <nav className="sticky top-0 z-10 bg-opacity-0">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <span className="text-2xl text-white font-semibold">Logo</span>
-          <div className="flex space-x-4 text-white">
-            <a href="#">Dashboard</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
-          </div>
-        </div>
-      </div>
-    </nav> */}
+export default function Navbar() {
+	return (
+		<Disclosure
+			as="nav"
+			className="fixed top-0 z-10 bg-transparent backdrop-filter backdrop-blur-lg bg-opacity-40 w-full"
+		>
+			{({ open }) => (
+				<>
+					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+						<div className="relative flex h-16 items-center justify-between">
+							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+								{/* Mobile menu button*/}
+								<Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-yellow-300 hover:font-large focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+									<span className="sr-only">Open main menu</span>
+									{open ? (
+										<XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+									) : (
+										<Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+									)}
+								</Disclosure.Button>
+							</div>
+							<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
+								<div className="flex flex-shrink-0 items-center">
+									<img
+										className="block h-10 w-auto lg:hidden"
+										src="/logo.png"
+										alt="Utsav Logo"
+									/>
+									<img
+										className="hidden h-10 w-auto lg:block"
+										src="/logo.png"
+										alt="Utsav Logo"
+									/>
+								</div>
+								<div className="hidden sm:ml-6 sm:block">
+									<div className="flex space-x-4">
+										{navigation.map((item) => (
+											<a
+												key={item.name}
+												href={item.href}
+												className={classNames(
+													item.current
+														? "text-gray-300 hover:text-yellow-300 hover:font-large"
+														: "text-gray-300 hover:text-yellow-300",
+													"rounded-md px-3 py-2 text-md font-medium hover:text-lg"
+												)}
+												aria-current={item.current ? "page" : undefined}
+											>
+												{item.name}
+											</a>
+										))}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-		{/* <nav className="px-2 sm:px-4 rounded bg-transparent">
-      <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <h2 className="font-extrabold text-[24px] leading-[30px] text-white" >NAVANEETH</h2>
-        <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span className="sr-only">Open main menu</span>
-          <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-        </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="flex flex-col p-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium ">
-            <li>
-              <a href="#" className="block py-2 pl-3 pr-4 text-white bg-transparent" aria-current="page">Home</a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 pl-3 pr-4 text-white bg-transparent">About</a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 pl-3 pr-4 text-white bg-transparent">Work</a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 pl-3 pr-4 text-white bg-transparent">Skills</a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 pl-3 pr-4 text-white bg-transparent">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> */}
-	</motion.nav>
-);
-
-export default Navbar;
+					<Disclosure.Panel className="sm:hidden">
+						<div className="space-y-1 px-2 pb-3 pt-2">
+							{navigation.map((item) => (
+								<Disclosure.Button
+									key={item.name}
+									as="a"
+									href={item.href}
+									className={classNames(
+										item.current
+											? "text-yellow-300"
+											: "text-gray-300 hover:text-white",
+										"block rounded-md px-3 py-2 text-base font-medium hover:font-large"
+									)}
+									aria-current={item.current ? "page" : undefined}
+								>
+									{item.name}
+								</Disclosure.Button>
+							))}
+						</div>
+					</Disclosure.Panel>
+				</>
+			)}
+		</Disclosure>
+	);
+}

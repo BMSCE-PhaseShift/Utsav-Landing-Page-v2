@@ -39,7 +39,12 @@
 }
 
 .my-bg {
-  background: #101016;
+  /* background: #101016; */
+  background: #000000;
+  /* background: linear-gradient(90deg,
+    #000000,
+    #000000 
+  ) */
 }
 
 /* my gradient */

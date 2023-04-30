@@ -51,7 +51,7 @@ const Section1 = () => {
 
 	return (
 		<>
-			<section className={`${styles.paddings} relative z-10`}>
+			<section className={`${styles.paddings} relative z-0`}>
 				<motion.div
 					variants={staggerContainer}
 					initial="hidden"
@@ -69,12 +69,14 @@ const Section1 = () => {
 						textStyles="text-center"
 					/>
 					<div className="mt-[50px] flex flex-col gap-[30px]">
-						<motion.p
+						<motion.h1
 							variants={fadeIn("up", "tween", 0.2, 1)}
-							className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
+							data-value="HYPERPLEXED"
+							onMouseOver={onMouseOverHandler}
+							className="mt-[8px] lg:mx-[32px] font-bold sm:text-[32px] text-[24px] text-center text-white space-mono-font"
 						>
-							Placeholder for Text Scramble
-						</motion.p>
+							{text}
+						</motion.h1>
 					</div>
 					<div className="mt-[50px] flex flex-col gap-[30px]">
 						<motion.p
@@ -84,15 +86,6 @@ const Section1 = () => {
 							<Timer></Timer>
 						</motion.p>
 					</div>
-					<div className="mt-[50px] flex flex-col gap-[30px]">
-						<h1
-							data-value="HYPERPLEXED"
-							onMouseOver={onMouseOverHandler}
-							className="mt-[8px] lg:mx-[32px] font-bold sm:text-[32px] text-[24px] text-center text-white space-mono-font"
-						>
-							{text}
-						</h1>
-					</div>
 				</motion.div>
 			</section>
 		</>
@@ -100,7 +93,6 @@ const Section1 = () => {
 };
 
 export default Section1;
-
 
 const Timer = () => {
 	function getTimeRemaining() {
@@ -133,27 +125,47 @@ const Timer = () => {
 	}, []);
 
 	if (date)
-    return (
-      <div className="flex justify-center items-center">
-        <div className="flex flex-row">
-          <div className="mx-[20px] text-yellow-300">
-            <p className="cinzel-font font-semibold" style={{ fontSize: "2em"}}>{date.days}</p>
-            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>Days</p>
-          </div>
-          <div className="mx-[20px] text-yellow-300">
-            <p className="cinzel-font font-semibold" style={{ fontSize: "2em" }}>{date.hours}</p>
-            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>Hours</p>
-          </div>
-          <div className="mx-[20px] text-yellow-300">
-            <p className="cinzel-font font-semibold" style={{ fontSize: "2em" }}>{date.minutes}</p>
-            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>mins</p>
-          </div>
-          <div className="mx-[20px] text-yellow-300">
-            <p className="cinzel-font font-semibold" style={{ fontSize: "2em" }}>{date.seconds}</p>
-            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>Secs</p>
-          </div>
-        </div>
-      </div>
-    );
-  else return <></>;
+		return (
+			<div className="flex justify-center items-center">
+				<div className="flex flex-row">
+					<div className="mx-[20px] text-yellow-300">
+						<p
+							className="cinzel-font font-semibold"
+							style={{ fontSize: "2em" }}
+						>
+							{date.days}
+						</p>
+						<p style={{ fontSize: "1em", color: "#b1b5ba" }}>Days</p>
+					</div>
+					<div className="mx-[20px] text-yellow-300">
+						<p
+							className="cinzel-font font-semibold"
+							style={{ fontSize: "2em" }}
+						>
+							{date.hours}
+						</p>
+						<p style={{ fontSize: "1em", color: "#b1b5ba" }}>Hours</p>
+					</div>
+					<div className="mx-[20px] text-yellow-300">
+						<p
+							className="cinzel-font font-semibold"
+							style={{ fontSize: "2em" }}
+						>
+							{date.minutes}
+						</p>
+						<p style={{ fontSize: "1em", color: "#b1b5ba" }}>mins</p>
+					</div>
+					<div className="mx-[20px] text-yellow-300">
+						<p
+							className="cinzel-font font-semibold"
+							style={{ fontSize: "2em" }}
+						>
+							{date.seconds}
+						</p>
+						<p style={{ fontSize: "1em", color: "#b1b5ba" }}>Secs</p>
+					</div>
+				</div>
+			</div>
+		);
+	else return <></>;
 };
