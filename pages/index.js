@@ -1,5 +1,5 @@
 import { Footer, Navbar } from '../components';
-import { AboutUs, Explore, ContactUs, Events, Feedback, GetStarted, Hero, Section1, Theme, WhatsNew, World } from '../sections';
+import { AboutUs, Patrons , Explore, ContactUs, Events, Feedback, GetStarted, Hero, Section1, Theme, WhatsNew, World } from '../sections';
 
 const Page = () => (
     <div className='my-bg overflow-hidden'>
@@ -20,9 +20,10 @@ const Page = () => (
         {/* <World /> */}
 
         <div className="relative">
-            <ContactUs />
+            <Patrons />     
             <div className="gradient-03 z-0" />
             {/* <Feedback /> */}
+            <ContactUs />
         </div>
 
         {/* <Footer /> */}

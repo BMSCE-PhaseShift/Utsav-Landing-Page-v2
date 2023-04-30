@@ -14,18 +14,27 @@ const Events = () => (
 			initial="hidden"
 			whileInView="show"
 			viewport={{ once: false, amount: 0.25 }}
-			className={`${styles.innerWidth} mx-auto flex flex-col  mb-60`}
+			className={`${styles.innerWidth} mx-auto flex flex-col  sm:mb-20 `}
 		>
 			<TitleText
 				title={<>Events and Workshops</>}
-				textStyles="text-center cinzel-font"
+				textStyles="text-center cinzel-font text-hp-yellow"
 			/>
-			<div className="mt-[50px] flex flex-col gap-[30px]">
+			<div className="mt-[20px] flex flex-col gap-[30px]">
 				<motion.p
 					variants={fadeIn("up", "tween", 0.2, 1)}
-					className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
+					className="mt-[20px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
 				>
-					Placeholder for Registration Button
+					{/* add text */}
+						<p>
+						We have a plethora of events and workshops lined up for you.
+						</p> 
+					<button
+					onClick={() => window.open("https://register.bmsutsav.in")}
+						class="mt-[20px] bg-transparent hover:bg-orange-300 text-yellow-200 font-semibold hover:text-black py-1 px-3 border border-yellow-500 hover:border-transparent rounded">
+					Explore Events and Workshops
+					</button>
+
 				</motion.p>
 			</div>
 		</motion.div>

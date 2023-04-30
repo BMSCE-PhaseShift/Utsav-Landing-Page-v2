@@ -9,6 +9,7 @@ import World from './World';
 import Feedback from './Feedback';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
+import Patrons from './Patrons';
 
 export {
   Hero,
@@ -22,4 +23,5 @@ export {
   WhatsNew,
   World,
   Feedback,
+  Patrons,
 };

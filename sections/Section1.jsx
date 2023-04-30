@@ -57,11 +57,11 @@ const Section1 = () => {
 					initial="hidden"
 					whileInView="show"
 					viewport={{ once: false, amount: 0.25 }}
-					className={`${styles.innerWidth} mx-auto flex flex-col mb-60`}
+					className={`${styles.innerWidth} mx-auto flex flex-col sm:mb-20 `}
 				>
 					<TitleText
 						title={<>UTSAV 2023</>}
-						textStyles="mt-8 text-center cinzel-font"
+						textStyles="mt-8 text-center cinzel-font text-hp-yellow"
 					/>
 					<TypingText title="South India's Biggest" textStyles="text-center" />
 					<TypingText
@@ -81,7 +81,7 @@ const Section1 = () => {
 							variants={fadeIn("up", "tween", 0.2, 1)}
 							className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
 						>
-							Placeholder for Countdown
+							<Timer></Timer>
 						</motion.p>
 					</div>
 					<div className="mt-[50px] flex flex-col gap-[30px]">
@@ -100,3 +100,60 @@ const Section1 = () => {
 };
 
 export default Section1;
+
+
+const Timer = () => {
+	function getTimeRemaining() {
+		const t = new Date();
+		const r = new Date(2023, 4, 26);
+		const total = Date.parse(r) - Date.parse(t);
+		const seconds = Math.floor((total / 1000) % 60);
+		const minutes = Math.floor((total / 1000 / 60) % 60);
+		const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+		const days = Math.floor(total / (1000 * 60 * 60 * 24));
+		return {
+			days: ("0" + days).slice(-2),
+			hours: ("0" + hours).slice(-2),
+			minutes: ("0" + minutes).slice(-2),
+			seconds: ("0" + seconds).slice(-2),
+		};
+	}
+	const [date, setDate] = useState(null);
+
+	function updateClock() {
+		const t = getTimeRemaining();
+		setDate(t);
+	}
+	useEffect(() => {
+		updateClock();
+		const timeinterval = setInterval(updateClock, 1000);
+		return () => {
+			clearInterval(timeinterval);
+		};
+	}, []);
+
+	if (date)
+    return (
+      <div className="flex justify-center items-center">
+        <div className="flex flex-row">
+          <div className="mx-[20px] text-yellow-300">
+            <p className="cinzel-font font-semibold" style={{ fontSize: "2em"}}>{date.days}</p>
+            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>Days</p>
+          </div>
+          <div className="mx-[20px] text-yellow-300">
+            <p className="cinzel-font font-semibold" style={{ fontSize: "2em" }}>{date.hours}</p>
+            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>Hours</p>
+          </div>
+          <div className="mx-[20px] text-yellow-300">
+            <p className="cinzel-font font-semibold" style={{ fontSize: "2em" }}>{date.minutes}</p>
+            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>mins</p>
+          </div>
+          <div className="mx-[20px] text-yellow-300">
+            <p className="cinzel-font font-semibold" style={{ fontSize: "2em" }}>{date.seconds}</p>
+            <p style={{ fontSize: "1em", color: "#b1b5ba" }}>Secs</p>
+          </div>
+        </div>
+      </div>
+    );
+  else return <></>;
+};

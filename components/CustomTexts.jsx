@@ -26,3 +26,14 @@ export const TitleText = ({ title, textStyles }) => (
 		{title}
 	</motion.h2>
 );
+
+export const SubtitleText = ({ title, textStyles }) => (
+	<motion.h5
+		variants={textVariant2}
+		initial="hidden"
+		whileInView="show"
+		className={`mt-[8px] mb-[10px] font-bold md:text-[30px] text-[20px] text-white ${textStyles}`}
+	>
+		{title}
+	</motion.h5>
+);
