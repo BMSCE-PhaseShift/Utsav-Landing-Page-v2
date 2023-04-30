@@ -21,7 +21,7 @@ const Events = () => (
 				textStyles="text-center cinzel-font text-hp-yellow"
 			/>
 			<div className="mt-[20px] flex flex-col gap-[30px]">
-				<motion.p
+				<motion.div
 					variants={fadeIn("up", "tween", 0.2, 1)}
 					className="mt-[20px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
 				>
@@ -33,7 +33,7 @@ const Events = () => (
 					>
 						Explore Events and Workshops
 					</button>
-				</motion.p>
+				</motion.div>
 			</div>
 		</motion.div>
 	</section>

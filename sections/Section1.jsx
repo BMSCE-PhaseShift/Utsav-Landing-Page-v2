@@ -8,50 +8,70 @@ import { planetVariants, fadeIn, staggerContainer } from "../utils/motion";
 import { InsightCard, TitleText, TypingText } from "../components";
 
 const Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 const Section1 = () => {
-	const [text, setText] = useState("");
+	const [text, setText] = useState("LETS GOOOO");
 	const [intervalId, setIntervalId] = useState(null);
-	const [isUtsav, setIsUtsav] = useState(true);
+	const [stringIndex, setStringIndex] = useState(0);
+	const [currentIndex, setCurrentIndex] = useState(0);
 
-	const onMouseOverHandler = (event) => {
+	const strings = [
+		"UTSAV 2023",
+		"26, 27, 28 May 2023",
+		"REGALIA",
+		"ROYALTY",
+		"FESTIVAL OF FAITH",
+	];
+	const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	const handleMouseOver = () => {
 		let iteration = 0;
-		const newText = isUtsav ? "MACHI READIYAA" : "UTSAV 2023";
+		const nextStringIndex = (stringIndex + 1) % strings.length;
+		console.log(stringIndex);
+		const newText = strings[nextStringIndex];
 
 		clearInterval(intervalId);
 
-		setIntervalId(
-			setInterval(() => {
-				setText(
-					newText
-						.split("")
-						.map((letter, index) => {
-							if (index < iteration) {
-								return newText[index];
-							}
-							return Letters[Math.floor(Math.random() * 26)];
-						})
-						.join("")
-				);
+		const newIntervalId = setInterval(() => {
+			setText((prevText) =>
+				newText
+					.split("")
+					.map((letter, index) => {
+						if (index < iteration) {
+							return letter;
+						}
+						return letters[Math.floor(Math.random() * 26)];
+					})
+					.join("")
+			);
 
-				if (iteration >= newText.length) {
-					clearInterval(intervalId);
-				}
+			// if (iteration >= newText.length) {
+			// 	clearInterval(newIntervalId);
+			// }
 
-				iteration += 1 / 3;
-			}, 30)
-		);
+			iteration += 1 / 3;
+		}, 30);
 
-		setIsUtsav(!isUtsav);
+		setIntervalId(newIntervalId);
+		setStringIndex(nextStringIndex);
+		setCurrentIndex(nextStringIndex);
 	};
 
 	useEffect(() => {
-		setText("UTSAV"); // Set initial text
-	}, []);
+		return () => clearInterval(intervalId);
+	}, [intervalId]);
 
+	useEffect(() => {
+		const int2 = setInterval(() => {
+			// onMouseOverHandler();
+			handleMouseOver();
+			// setStringIndex(stringIndex + 1);
+			// console.log(stringIndex)
+		}, 3000);
+		return () => clearInterval(int2);
+	}, [currentIndex]);
 	return (
 		<>
-			<section className={`${styles.paddings} relative z-0`}>
+			<section className={`${styles.paddings} relative z-10`}>
 				<motion.div
 					variants={staggerContainer}
 					initial="hidden"
@@ -69,22 +89,22 @@ const Section1 = () => {
 						textStyles="text-center"
 					/>
 					<div className="mt-[50px] flex flex-col gap-[30px]">
-						<motion.h1
-							variants={fadeIn("up", "tween", 0.2, 1)}
-							data-value="HYPERPLEXED"
-							onMouseOver={onMouseOverHandler}
+						<h1
+							// variants={fadeIn("up", "tween", 0.2, 1)}
+							// data-value="HYPERPLEXED"
+							// onMouseOver={handleMouseOver}
 							className="mt-[8px] lg:mx-[32px] font-bold sm:text-[32px] text-[24px] text-center text-white space-mono-font"
 						>
 							{text}
-						</motion.h1>
+						</h1>
 					</div>
 					<div className="mt-[50px] flex flex-col gap-[30px]">
-						<motion.p
+						<motion.div
 							variants={fadeIn("up", "tween", 0.2, 1)}
 							className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
 						>
 							<Timer></Timer>
-						</motion.p>
+						</motion.div>
 					</div>
 				</motion.div>
 			</section>

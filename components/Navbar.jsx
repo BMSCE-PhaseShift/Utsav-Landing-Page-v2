@@ -24,7 +24,7 @@ export default function Navbar() {
 	return (
 		<Disclosure
 			as="nav"
-			className="fixed top-0 z-10 bg-transparent backdrop-filter backdrop-blur-lg bg-opacity-40 w-full"
+			className="fixed top-0 z-20 bg-transparent backdrop-filter backdrop-blur-lg bg-opacity-40 w-full"
 		>
 			{({ open }) => (
 				<>
