@@ -8,7 +8,7 @@ import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 const Patrons = () => {
 	return (
-		<section className={`${styles.paddings} relative z-0`}>
+		<section className={`${styles.paddings} relative z-10`}>
 			<div className="gradient-02 z-0" />
 			<motion.div
 				variants={staggerContainer}
@@ -32,7 +32,7 @@ const Patrons = () => {
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-center items-center"
+						className="flex flex-wrap justify-center items-center flex-col md:flex-row"
 					>
 						{patrons.map((patron, index) => (
 							<InsightCard
@@ -55,7 +55,7 @@ const Patrons = () => {
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-center items-center"
+						className="flex flex-wrap justify-around items-center flex-col md:flex-row"
 					>
 						{adv.map((patron, index) => (
 							<InsightCard
@@ -78,7 +78,7 @@ const Patrons = () => {
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-center items-center"
+						className="flex flex-wrap justify-center items-center  flex-col md:flex-row"
 					>
 						{fac.map((patron, index) => (
 							<InsightCard
@@ -101,7 +101,7 @@ const Patrons = () => {
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-center items-center"
+						className="flex flex-wrap justify-center items-center flex-col md:flex-row"
 					>
 						{stu.map((patron, index) => (
 							<InsightCard

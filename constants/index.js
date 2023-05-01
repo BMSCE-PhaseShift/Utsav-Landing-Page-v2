@@ -11,7 +11,7 @@ export const patrons = [
     name: "Shri. Ravi Venkatesam",
     role: "Trustee , BMSET",
   }
-  
+
 ];
 
 export const adv = [
