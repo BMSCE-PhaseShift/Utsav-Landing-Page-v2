@@ -1,29 +1,28 @@
 "use client";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
+import { TitleText, TypingText } from "../components";
 import styles from "../styles";
-import { insights } from "../constants";
-import { planetVariants, fadeIn, staggerContainer } from "../utils/motion";
-import { InsightCard, TitleText, TypingText } from "../components";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const Section1 = () => {
-	const [text, setText] = useState("LETS GOOOO");
+	const [text, setText] = useState("UTSAV 2023");
 	const [intervalId, setIntervalId] = useState(null);
 	const [stringIndex, setStringIndex] = useState(0);
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const strings = [
 		"UTSAV 2023",
-		"26, 27, 28 May 2023",
-		"REGALIA",
-		"ROYALTY",
+		"26 27 28 MAY",
+		"ROYALTY REDEFINED",
+		"MACCHI READIYA",
 		"FESTIVAL OF FAITH",
 	];
 	const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	const handleMouseOver = () => {
+	const textScramble = () => {
 		let iteration = 0;
 		const nextStringIndex = (stringIndex + 1) % strings.length;
 		console.log(stringIndex);
@@ -43,11 +42,6 @@ const Section1 = () => {
 					})
 					.join("")
 			);
-
-			// if (iteration >= newText.length) {
-			// 	clearInterval(newIntervalId);
-			// }
-
 			iteration += 1 / 3;
 		}, 30);
 
@@ -62,10 +56,7 @@ const Section1 = () => {
 
 	useEffect(() => {
 		const int2 = setInterval(() => {
-			// onMouseOverHandler();
-			handleMouseOver();
-			// setStringIndex(stringIndex + 1);
-			// console.log(stringIndex)
+			textScramble();
 		}, 3000);
 		return () => clearInterval(int2);
 	}, [currentIndex]);
@@ -89,12 +80,7 @@ const Section1 = () => {
 						textStyles="text-center"
 					/>
 					<div className="mt-[50px] flex flex-col gap-[30px]">
-						<h1
-							// variants={fadeIn("up", "tween", 0.2, 1)}
-							// data-value="HYPERPLEXED"
-							// onMouseOver={handleMouseOver}
-							className="mt-[8px] lg:mx-[32px] font-bold sm:text-[32px] text-[24px] text-center text-white space-mono-font"
-						>
+						<h1 className="mt-[8px] lg:mx-[32px] font-bold sm:text-[32px] text-[24px] text-center text-white space-mono-font">
 							{text}
 						</h1>
 					</div>

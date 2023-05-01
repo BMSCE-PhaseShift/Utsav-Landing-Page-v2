@@ -2,17 +2,10 @@
 
 import { motion } from "framer-motion";
 
+import { InsightCard, SubtitleText, TitleText } from "../components";
+import { adv, fac, patrons, stu } from "../constants";
 import styles from "../styles";
-import { insights } from "../constants";
-import { staggerContainer } from "../utils/motion";
-import {
-	InsightCard,
-	TitleText,
-	TypingText,
-	SubtitleText,
-} from "../components";
-import { fadeIn } from "../utils/motion";
-import { patrons, adv, fac, stu } from "../constants";
+import { fadeIn, staggerContainer } from "../utils/motion";
 const Patrons = () => {
 	return (
 		<section className={`${styles.paddings} relative z-0`}>

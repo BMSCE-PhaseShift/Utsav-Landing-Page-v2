@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 
+import { TitleText } from "../components";
 import styles from "../styles";
-import { insights } from "../constants";
-import { staggerContainer } from "../utils/motion";
-import { InsightCard, TitleText, TypingText } from "../components";
-import { fadeIn } from "../utils/motion";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const AboutUs = () => (
 	<section className={`${styles.paddings} relative z-0`} id="about">
