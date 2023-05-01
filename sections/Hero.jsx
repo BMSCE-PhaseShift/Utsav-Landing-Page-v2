@@ -6,7 +6,7 @@ const Hero = () => (
 			<video
 				className="w-full h-full object-cover"
 				src="./videoBg.mp4"
-				autoplay
+				autoPlay
 				loop
 				muted
 				playsinline
