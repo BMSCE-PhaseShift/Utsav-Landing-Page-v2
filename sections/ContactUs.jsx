@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { InsightCard, TitleText, TypingText } from "../components";
-import { SocialIcon } from "react-social-icons";
 import { BiMap } from "react-icons/bi";
-import { MdEmail, MdCopyright } from "react-icons/md";
+import { MdCopyright, MdEmail } from "react-icons/md";
+import { SocialIcon } from "react-social-icons";
+import { TitleText } from "../components";
 
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";

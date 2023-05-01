@@ -2,10 +2,9 @@
 
 import { motion } from "framer-motion";
 
+import { TitleText } from "../components";
 import styles from "../styles";
-import { insights } from "../constants";
-import { planetVariants, fadeIn, staggerContainer } from "../utils/motion";
-import { InsightCard, TitleText, TypingText } from "../components";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const Events = () => (
 	<section className={`${styles.paddings} relative z-0`} id="events">

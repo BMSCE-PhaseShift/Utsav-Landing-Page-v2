@@ -1,19 +1,11 @@
 import Navbar from './Navbar';
-import { TypingText, TitleText , SubtitleText} from './CustomTexts';
-import ExploreCard from './ExploreCard';
-import StartSteps from './StartSteps';
-import NewFeatures from './NewFeatures';
+import { TypingText, TitleText, SubtitleText } from './CustomTexts';
 import InsightCard from './InsightCard';
-import Footer from './Footer';
 
 export {
   Navbar,
   TitleText,
   TypingText,
-  StartSteps,
-  NewFeatures,
-  ExploreCard,
   InsightCard,
-  Footer,
   SubtitleText,
 };

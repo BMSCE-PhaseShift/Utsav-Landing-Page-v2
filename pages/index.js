@@ -1,12 +1,13 @@
-import { Footer, Navbar } from '../components';
-import { AboutUs, Patrons, Explore, ContactUs, Events, Feedback, GetStarted, Hero, Section1, Theme, WhatsNew, World } from '../sections';
+import { Navbar } from '../components';
+import { AboutUs, ContactUs, Events, Hero, Patrons, Section1, Theme } from '../sections';
+import Head from '../app/head';
 
 const Page = () => (
     <>
+        <Head />
         <Navbar />
         <div className='my-bg overflow-hidden'>
             <Hero />
-            {/* <Hero /> */}
             <div className="relative" >
                 <Section1 />
                 <div className="gradient-03 z-0" />
@@ -19,16 +20,11 @@ const Page = () => (
                 <AboutUs />
             </div>
 
-            {/* <World /> */}
-
             <div className="relative">
                 <Patrons />
                 <div className="gradient-03 z-0" />
-                {/* <Feedback /> */}
                 <ContactUs />
             </div>
-
-            {/* <Footer /> */}
         </div>
     </>
 );
