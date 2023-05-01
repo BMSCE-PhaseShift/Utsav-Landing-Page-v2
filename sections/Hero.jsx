@@ -9,7 +9,8 @@ const Hero = () => (
 				autoPlay
 				loop
 				muted
-				playsinline
+				playsInline
+				preload="auto"
 			/>
 		</section>
 	</>
