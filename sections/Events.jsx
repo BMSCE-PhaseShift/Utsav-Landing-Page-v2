@@ -22,7 +22,7 @@ const Events = () => (
 			<div className="mt-[20px] flex flex-col gap-[30px]">
 				<motion.div
 					variants={fadeIn("up", "tween", 0.2, 1)}
-					className="mt-[20px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
+					className="mt-[20px] lg:mx-[32px] font-normal sm:text-[18px] text-[18px] text-center text-white"
 				>
 					{/* add text */}
 					<p>We have a plethora of events and workshops lined up for you.</p>
@@ -30,7 +30,7 @@ const Events = () => (
 					<span className="indicator-item badge badge-primary">Click to register</span> 
 					<button
 						onClick={() => window.open("https://register.bmsutsav.in")}
-						className=" bg-transparent 
+						className="w-[210px] md:w-[300px] bg-transparent 
 							hover:bg-yellow-300 text-yellow-200 
 							font-semibold hover:text-black py-1 px-3 
 							border border-yellow-500 
