@@ -26,12 +26,22 @@ const Events = () => (
 				>
 					{/* add text */}
 					<p>We have a plethora of events and workshops lined up for you.</p>
+					<div className="indicator mt-[30px]">
+					<span className="indicator-item badge badge-primary">Click to register</span> 
 					<button
 						onClick={() => window.open("https://register.bmsutsav.in")}
-						className="mt-[20px] bg-transparent hover:bg-yellow-300 text-yellow-200 font-semibold hover:text-black py-1 px-3 border border-yellow-500 hover:border-transparent rounded"
+						className=" bg-transparent 
+							hover:bg-yellow-300 text-yellow-200 
+							font-semibold hover:text-black py-1 px-3 
+							border border-yellow-500 
+							hover:border-transparent 
+							btn
+							rounded"
 					>
 						Explore Events and Workshops
 					</button>
+
+					</div>
 				</motion.div>
 			</div>
 		</motion.div>

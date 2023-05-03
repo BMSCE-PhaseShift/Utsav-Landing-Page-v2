@@ -7,6 +7,7 @@ const navigation = [
 	{ name: "Home", href: "#", current: true },
 	{ name: "Events", href: "#events", current: false },
 	{ name: "Theme", href: "#theme", current: false },
+	{ name: "Register", href: "https://register.bmsutsav.in/", current: false},
 	{ name: "About", href: "#about", current: false },
 	{ name: "Contact Us", href: "#contact", current: false },
 ];
