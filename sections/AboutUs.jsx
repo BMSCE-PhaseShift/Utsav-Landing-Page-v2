@@ -29,7 +29,7 @@ const AboutUs = () => (
 
 			<motion.p
 				variants={fadeIn("up", "tween", 0.2, 1)}
-				className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-left sm:text-center text-white"
+				className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-justify sm:text-justify text-white"
 			>
 				Established in 1946, B. M. S. College of Engineering (BMSCE) is a
 				pioneer in the field of Engineering Education. The visionary, Late Sri

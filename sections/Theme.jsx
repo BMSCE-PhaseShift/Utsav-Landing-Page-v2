@@ -23,7 +23,7 @@ const Theme = () => (
 
 			<motion.p
 				variants={fadeIn("up", "tween", 0.2, 1)}
-				className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-left sm:text-center text-white"
+				className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] sm:text-justify text-justify text-white"
 			>
 				Regalia emulates royalty - it is not just an emotion, but a way of life
 				that makes one feel a sense of belonging while also being in an exalted

@@ -7,8 +7,8 @@ const navigation = [
 	{ name: "Home", href: "#", current: true },
 	{ name: "Events", href: "#events", current: false },
 	{ name: "Theme", href: "#theme", current: false },
-	{ name: "Register", href: "https://register.bmsutsav.in/", current: false},
 	{ name: "About", href: "#about", current: false },
+	{ name: "Register", href: "https://register.bmsutsav.in/", current: false },
 	{ name: "Contact Us", href: "#contact", current: false },
 ];
 
@@ -56,9 +56,12 @@ export default function Navbar() {
 											<a
 												key={item.name}
 												href={item.href}
+												target={item.name === "Register" ? "_blank" : "_self"}
 												className={classNames(
 													item.current
 														? "text-gray-300 hover:text-yellow-300 hover:font-large"
+														: item.name === "Register"
+														? "text-red-500 hover:text-red-700" // change color to blue
 														: "text-gray-300 hover:text-yellow-300",
 													"rounded-md px-3 py-2 text-md font-medium hover:text-lg"
 												)}
@@ -80,9 +83,12 @@ export default function Navbar() {
 									key={item.name}
 									as="a"
 									href={item.href}
+									target={item.name === "Register" ? "_blank" : "_self"}
 									className={classNames(
 										item.current
 											? "text-yellow-300"
+											: item.name === "Register"
+											? "text-red-500 hover:text-red-700" // change color to blue
 											: "text-gray-300 hover:text-white",
 										"block rounded-md px-3 py-2 text-base font-medium hover:font-large"
 									)}
