@@ -43,7 +43,7 @@ export const fac = [
     role: "Joint Secretary",
   },
   {
-    name: "Dr. M. Umavathi",
+    name: "Dr. Umavathi M.",
     role: "Faculty Treasurer",
   },
 ];
