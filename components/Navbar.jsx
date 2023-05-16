@@ -9,7 +9,7 @@ const navigation = [
 	{ name: "Theme", href: "#theme", current: false },
 	{ name: "About", href: "#about", current: false },
 	{ name: "Register", href: "https://register.bmsutsav.in/", current: false },
-	{ name:"Play-Game", href: "https://game.bmsutsav.in/", current: false}
+	{ name:"Play-Game", href: "https://game.bmsutsav.in/", current: false},
 	{ name: "Contact Us", href: "#contact", current: false },
 ];
 
