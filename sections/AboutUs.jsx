@@ -22,7 +22,7 @@ const AboutUs = () => (
 			/>
 			<motion.img
 				variants={fadeIn("up", "tween", 0.3, 1)}
-				src="/abtimg.webp"
+				src="/founder.jpg"
 				alt="arrow down"
 				className="w-[150px] h-[150px] object-contain mt-[28px] mb-[14px]"
 			/>
