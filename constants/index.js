@@ -21,11 +21,11 @@ export const adv = [
   },
   {
     name: "Dr. Suresh. R. Reddy",
-    role: "Vice Principal - Admin, BMSCE",
+    role: "Vice Principal - Academics, BMSCE",
   },
   {
     name: "Dr. Bheemsha Arya",
-    role: "Vice Principal - Academics, BMSCE",
+    role: "Vice Principal - Admin, BMSCE",
   },
 ];
 
