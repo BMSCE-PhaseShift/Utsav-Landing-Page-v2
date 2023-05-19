@@ -1,5 +1,9 @@
 export const patrons = [
   {
+    name: "Dr. B. S. Ragini Narayan",
+    role: "Donor Trustee And Member Secretary , BMSET",
+  },
+  {
     name: "Dr. P. Dayananda Pai",
     role: "Life Trustee, BMSET",
   },
@@ -35,7 +39,7 @@ export const fac = [
     role: "Working Chairperson",
   },
   {
-    name: "Dr. Niranjan K E",
+    name: "Dr. Niranjan K R",
     role: "Organizing Secretary",
   },
   {

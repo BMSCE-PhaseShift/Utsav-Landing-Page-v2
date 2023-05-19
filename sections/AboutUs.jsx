@@ -20,12 +20,24 @@ const AboutUs = () => (
 				title={<>ABOUT US - BMSCE</>}
 				textStyles="text-center cinzel-font text-hp-yellow"
 			/>
+			{/* create a row element and put the below two images inside in */}
+			<motion.div
+				variants={fadeIn("up", "tween", 0.3, 1)}
+				className="flex flex-wrap justify-around items-center flex-row md:flex-row"
+			>
 			<motion.img
 				variants={fadeIn("up", "tween", 0.3, 1)}
 				src="/founder.jpg"
 				alt="arrow down"
 				className="w-[150px] h-[150px] object-contain mt-[28px] mb-[14px]"
 			/>
+			<motion.img
+				variants={fadeIn("up", "tween", 0.3, 1)}
+				src="/founder2.jpg"
+				alt="arrow down"
+				className="w-[150px] h-[150px] object-contain mt-[28px] mb-[14px]"
+			/>
+			</motion.div>
 
 			<motion.p
 				variants={fadeIn("up", "tween", 0.2, 1)}
