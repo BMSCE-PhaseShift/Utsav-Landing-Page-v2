@@ -1,5 +1,5 @@
 import { Navbar } from '../components';
-import { AboutUs, ContactUs, Events, Hero, Patrons, Section1, Theme } from '../sections';
+import { AboutUs, ContactUs, Events, Hero, Patrons, Section1, Teams, Theme } from '../sections';
 import Head from '../app/head';
 
 const Page = () => (
@@ -21,6 +21,7 @@ const Page = () => (
             </div>
 
             <div className="relative">
+                <Teams />
                 <Patrons />
                 <div className="gradient-03 z-0" />
                 <ContactUs />
