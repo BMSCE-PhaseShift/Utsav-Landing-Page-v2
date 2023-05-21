@@ -11,7 +11,7 @@ const shuffleArray = (array) => {
     const newArray = [...array];
     newArray.sort(() => Math.random() - 0.5);
     return newArray;
-  };
+};
 
 const Teams = () => {
     // write code to randomise the order of images
@@ -31,15 +31,16 @@ const Teams = () => {
                     textStyles="text-center cinzel-font text-hp-yellow"
                 />
 
-                <TypingText title="The ones responsible for an amazing Utsav-23" textStyles="text-center" />
+                <TypingText title="The ones responsible" textStyles="text-center" />
+                <TypingText title="for an amazing Utsav-23" textStyles="text-center" />
 
-                <div className={` ${styles.topPaddings} grid grid-cols-6 gap-0 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-12 `}>
+                <div className={` ${styles.topPaddings} grid grid-cols-8 gap-0 sm:grid-cols-8 md:grid-cols-18 lg:grid-cols-24 `}>
                     {imageData.map((image, index) => (
                         <motion.img
                             key={index}
                             src={`data:image/png;base64,${image.encoding}`}
                             alt={`${image.name}`}
-                            className="brightness-100 hover:brightness-125 object-cover w-[97px] h-[80px] lg:w-[97px] lg:h-[80px] md:w-[97px] md:h-[80px] sm:w-[97px] sm:h-[80px] "
+                            className="brightness-100 hover:brightness-125 object-cover w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] md:w-[70px] md:h-[70px] sm:w-[50px] sm:h-[50px] "
                         />
                     ))}
                 </div>
