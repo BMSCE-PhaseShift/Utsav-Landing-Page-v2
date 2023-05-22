@@ -20,9 +20,8 @@ const Page = ({data}) => (
                 <AboutUs />
             </div>
 
-            <Teams data={data}/>
             <div className="relative">
-                
+                <Teams data={data}/>
                 <Patrons />
                 <div className="gradient-03 z-0" />
                 <ContactUs />
