@@ -6,6 +6,7 @@ import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 // import data from "../output.json";
 import { useState,useEffect } from "react";
+import Image from 'next/image';
 // import fs from 'fs';
 // import path from 'path';
 
@@ -39,13 +40,13 @@ const Teams = ({data}) => {
     console.log(fileNames);
     return (
         <section className={`${styles.paddings} relative z-10`} id="team">
-            <motion.div
+            {/* <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
-            >
+            > */}
                 <TitleText
                     title={<>MEET THE TEAM</>}
                     textStyles="text-center cinzel-font text-hp-yellow"
@@ -56,15 +57,18 @@ const Teams = ({data}) => {
 
                 <div className={` ${styles.topPaddings} grid grid-cols-6 gap-0 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 `}>
                     {fileNames.map((image, index) => (
-                        <motion.img
-                            key={index}
+                        <Image
+                            quality={50}
+                            width={80}
+                            height={80}
+                            key={index} 
                             src={`/output/${image}`}
                             alt={`${image.name}`}
                             className="brightness-100 hover:brightness-125 object-cover w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] md:w-[80px] md:h-[80px] sm:w-[70px] sm:h-[70px] "
                         />
                     ))}
                 </div>
-            </motion.div>
+            {/* </motion.div> */}
         </section>
     )
 }
