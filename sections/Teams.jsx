@@ -29,20 +29,20 @@ const Team = ({ data }) => {
 
   if (size.width) {
     return (
-      <section className={`relative z-10`} id="team">
-            <motion.div
+      <section className={`z-10`} id="team">
+            {/* <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 className={`mx-auto flex-col`}
-            >
+            > */}
                 <TitleText
                     title={<>MEET THE TEAM</>}
                     textStyles="text-center cinzel-font text-hp-yellow"
                 />
 
-            </motion.div>
+            {/* </motion.div> */}
         <div className="wrapper pt-[50px]">
           <div
             style={{
