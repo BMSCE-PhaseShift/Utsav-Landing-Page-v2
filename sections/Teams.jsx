@@ -23,26 +23,25 @@ function shuffle(array) {
 let teamList = [];
 
 const Team = ({ data }) => {
-  const teams = shuffle(data.fileNames);
-  teamList = teams;
+  teamList = data;
   const size = useWindowSize();
 
   if (size.width) {
     return (
       <section className={`z-10`} id="team">
-            {/* <motion.div
+            <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 className={`mx-auto flex-col`}
-            > */}
+            >
                 <TitleText
                     title={<>MEET THE TEAM</>}
                     textStyles="text-center cinzel-font text-hp-yellow"
                 />
 
-            {/* </motion.div> */}
+            
         <div className="wrapper pt-[50px]">
           <div
             style={{
@@ -90,6 +89,7 @@ const Team = ({ data }) => {
             </div>
           </div>
         </div>
+        </motion.div>
       </section>
     );
   } else {
