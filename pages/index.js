@@ -21,7 +21,7 @@ const Page = ({data}) => (
             </div>
 
             <div className="relative">
-                {/* <Teams data={data}/> */}
+                <Teams data={data}/>
                 <Patrons />
                 <div className="gradient-03 z-0" />
                 <ContactUs />
@@ -33,7 +33,9 @@ const Page = ({data}) => (
 export default Page;
 
 export async function getServerSideProps(context) {
-    const response = await fetch('http://bmsutsav.in/api/files');
+    // const response = await fetch('http://bmsutsav.in/api/files');
+    const response = await fetch('http://localhost:3000/api/files');
+
     const data = await response.json();
     return{
         props:{

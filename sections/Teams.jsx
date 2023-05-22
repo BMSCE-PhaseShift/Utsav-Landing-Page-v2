@@ -1,77 +1,125 @@
-"use client";
-
+import { useEffect, useState } from "react";
+import map from "../ocmap.json"
 import { motion } from "framer-motion";
-import { TitleText, TypingText } from "../components";
 import styles from "../styles";
+import { TitleText, TypingText } from "../components";
 import { fadeIn, staggerContainer } from "../utils/motion";
-// import data from "../output.json";
-import { useState,useEffect } from "react";
-import Image from 'next/image';
-// import fs from 'fs';
-// import path from 'path';
 
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
 
-const shuffleArray = (array) => {
-    const newArray = [...array];
-    newArray.sort(() => Math.random() - 0.5);
-    return newArray;
-};
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
 
-const Teams = ({data}) => {
-    // write code to randomise the order of images
-    // const [imageData, setImageData] = useState(shuffleArray(data));
-    const [fileNames, setFileNames] = useState(data.fileNames);
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]
+    ];
+  }
 
-    // useEffect(() => {
-    //   const fetchFileNames = async () => {
-    //     try {
-    //       const response = await fetch('/api/files');
-    //       const data = await response.json();
-    //       setFileNames(data.fileNames);
-    //     } catch (error) {
-    //       console.error('Error fetching file names:', error);
-    //     }
-    //   };
-  
-    //   fetchFileNames();
-    // }, []);
-  
-    // Use the `fileNames` array as needed
-    console.log(fileNames);
+  return array;
+}
+
+let teamList = [];
+
+const Team = ({ data }) => {
+  const teams = shuffle(data.fileNames);
+  teamList = teams;
+  const size = useWindowSize();
+
+  if (size.width) {
     return (
-        <section className={`${styles.paddings} relative z-10`} id="team">
-            {/* <motion.div
+      <section className={`relative z-10`} id="team">
+            <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
-                className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
-            > */}
+                className={`mx-auto flex-col`}
+            >
                 <TitleText
                     title={<>MEET THE TEAM</>}
                     textStyles="text-center cinzel-font text-hp-yellow"
                 />
 
-                <TypingText title="The ones responsible" textStyles="text-center" />
-                <TypingText title="for an amazing Utsav-23" textStyles="text-center" />
-
-                <div className={` ${styles.topPaddings} grid grid-cols-6 gap-0 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 `}>
-                    {fileNames.map((image, index) => (
-                        <Image
-                            quality={50}
-                            width={80}
-                            height={80}
-                            key={index} 
-                            src={`/output/${image}`}
-                            alt={`${image.name}`}
-                            className="brightness-100 hover:brightness-125 object-cover w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] md:w-[80px] md:h-[80px] sm:w-[70px] sm:h-[70px] "
-                        />
-                    ))}
+                {/* <TypingText title="" textStyles="text-center" />
+                <TypingText title="" textStyles="text-center" /> */}
+        <div className="wrapper">
+          <div
+            style={{
+              height: "100%",
+              pointerEvents: "none",
+              position: "absolute",
+              paddingTop: "100px",
+              textAlign: "center",
+              width: "100%",
+              fontSize: "2.5rem",
+              overflow: "hidden",
+              zIndex: "4",
+              width: "100%",
+              top: "0"
+            }}
+          >
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+              <h4 style={{ color: "white", textShadow: "#111 1px 0 10px" }}>
+                These people are the backbone of Utsav-23.
+              </h4>
+            </div>
+          </div>
+          <div style={{ width: size.width - 5, overflow: "hidden" }}>
+            <div className="flex flex-wrap justify-center">
+              {teamList.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: `url('/output/${item}')`,
+                    position: "relative",
+                    width: size.width > 1200
+                      ? `${size.width / 16 - 0.5}px`
+                      : size.width > 768
+                      ? `${size.width / 8 - 0.7}px`
+                      : `${size.width / 6 - 1}px`
+                  }}
+                >
+                  <div
+                    className="layer"
+                    style={{ height: "80px" }}
+                  ></div>
                 </div>
-            {/* </motion.div> */}
-        </section>
-    )
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+      </section>
+    );
+  } else {
+    return <></>;
+  }
+};
+
+export default Team;
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowSize;
 }
-
-export default Teams
-

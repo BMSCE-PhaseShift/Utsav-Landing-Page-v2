@@ -10,6 +10,44 @@
   scroll-behavior: smooth;
 }
 
+p {
+  margin: 0
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+}
+
+.layer {
+  z-index: 100;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 1) 100%);
+  opacity: 0.5;
+  transition: ease-in-out 0.2s;
+}
+
+.layer:hover {
+  opacity: 0;
+  background-color: #333;
+}
+
+.wrapper h1 {
+  z-index: 2;
+}
+
+.wrapper p {
+  z-index: 2;
+}
+
+.wrapper img {
+  z-index: 2;
+}
+
+.wrapper a {
+  z-index: 2;
+}
 /* scroll bar */
 ::-webkit-scrollbar {
   width: 5px;
@@ -179,4 +217,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    position: relative;
+    width: 100%;
+  }
 }
