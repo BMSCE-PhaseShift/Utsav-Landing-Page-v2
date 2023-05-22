@@ -42,9 +42,8 @@ const Team = ({ data }) => {
                     textStyles="text-center cinzel-font text-hp-yellow"
                 />
 
-                {/* <TypingText title="" textStyles="text-center" />
-                <TypingText title="" textStyles="text-center" /> */}
-        <div className="wrapper">
+            </motion.div>
+        <div className="wrapper pt-[50px]">
           <div
             style={{
               height: "100%",
@@ -91,7 +90,6 @@ const Team = ({ data }) => {
             </div>
           </div>
         </div>
-      </motion.div>
       </section>
     );
   } else {
