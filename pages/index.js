@@ -46,16 +46,19 @@ export async function getServerSideProps(context) {
 }
 
 function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
+    // Copy the array elements from index 2 to a new shuffled array
+    const shuffledArray = array.slice(2);
   
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]
-      ];
+    // Shuffle the new array
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
     }
   
-    return array;
+    // Combine the shuffled array with the unchanged elements at indices 0 and 1
+    const result = [...array.slice(0, 2), ...shuffledArray];
+    // console.log("new array "+result);
+    return result;
   }
+  
+  

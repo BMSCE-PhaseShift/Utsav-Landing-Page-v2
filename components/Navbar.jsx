@@ -58,7 +58,7 @@ export default function Navbar() {
 											<a
 												key={item.name}
 												href={item.href}
-												target={item.name === "Register" || "offic" ? "_blank" : "_self"}
+												target={item.name === "Register" ? "_blank" : "_self"}
 												className={classNames(
 													item.current
 														? "text-gray-300 hover:text-yellow-300 hover:font-large"
