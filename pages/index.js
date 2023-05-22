@@ -2,7 +2,7 @@ import { Navbar } from '../components';
 import { AboutUs, ContactUs, Events, Hero, Patrons, Section1, Teams, Theme } from '../sections';
 import Head from '../app/head';
 
-const Page = () => (
+const Page = ({data}) => (
     <>
         <Head />
         <Navbar />
@@ -21,7 +21,7 @@ const Page = () => (
             </div>
 
             <div className="relative">
-                <Teams />
+                <Teams data={data}/>
                 <Patrons />
                 <div className="gradient-03 z-0" />
                 <ContactUs />
@@ -31,3 +31,13 @@ const Page = () => (
 );
 
 export default Page;
+
+export async function getServerSideProps(context) {
+    const response = await fetch('http://bmsutsav.in/api/files');
+    const data = await response.json();
+    return{
+        props:{
+            data
+        }
+    }
+}

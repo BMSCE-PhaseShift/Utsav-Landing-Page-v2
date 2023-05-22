@@ -8,6 +8,7 @@ const navigation = [
 	{ name: "Events", href: "#events", current: false },
 	{ name: "Theme", href: "#theme", current: false },
 	{ name: "About", href: "#about", current: false },
+	{ name: "Team", href: "#team", current: false },
 	{ name: "Register", href: "https://register.bmsutsav.in/", current: false },
 	{ name:"Play-Game", href: "https://game.bmsutsav.in/", current: false},
 	{ name: "Contact Us", href: "#contact", current: false },

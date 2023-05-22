@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { TitleText, TypingText } from "../components";
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
-import data from "../output.json";
-import { useState } from "react";
+// import data from "../output.json";
+import { useState,useEffect } from "react";
+// import fs from 'fs';
+// import path from 'path';
+
 
 const shuffleArray = (array) => {
     const newArray = [...array];
@@ -13,10 +16,27 @@ const shuffleArray = (array) => {
     return newArray;
 };
 
-const Teams = () => {
+const Teams = ({data}) => {
     // write code to randomise the order of images
-    const [imageData, setImageData] = useState(shuffleArray(data));
+    // const [imageData, setImageData] = useState(shuffleArray(data));
+    const [fileNames, setFileNames] = useState(data.fileNames);
 
+    // useEffect(() => {
+    //   const fetchFileNames = async () => {
+    //     try {
+    //       const response = await fetch('/api/files');
+    //       const data = await response.json();
+    //       setFileNames(data.fileNames);
+    //     } catch (error) {
+    //       console.error('Error fetching file names:', error);
+    //     }
+    //   };
+  
+    //   fetchFileNames();
+    // }, []);
+  
+    // Use the `fileNames` array as needed
+    console.log(fileNames);
     return (
         <section className={`${styles.paddings} relative z-10`} id="team">
             <motion.div
@@ -34,13 +54,13 @@ const Teams = () => {
                 <TypingText title="The ones responsible" textStyles="text-center" />
                 <TypingText title="for an amazing Utsav-23" textStyles="text-center" />
 
-                <div className={` ${styles.topPaddings} grid grid-cols-8 gap-0 sm:grid-cols-8 md:grid-cols-18 lg:grid-cols-24 `}>
-                    {imageData.map((image, index) => (
+                <div className={` ${styles.topPaddings} grid grid-cols-6 gap-0 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 `}>
+                    {fileNames.map((image, index) => (
                         <motion.img
                             key={index}
-                            src={`data:image/png;base64,${image.encoding}`}
+                            src={`/output/${image}`}
                             alt={`${image.name}`}
-                            className="brightness-100 hover:brightness-125 object-cover w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] md:w-[70px] md:h-[70px] sm:w-[50px] sm:h-[50px] "
+                            className="brightness-100 hover:brightness-125 object-cover w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] md:w-[80px] md:h-[80px] sm:w-[70px] sm:h-[70px] "
                         />
                     ))}
                 </div>
@@ -50,3 +70,4 @@ const Teams = () => {
 }
 
 export default Teams
+
