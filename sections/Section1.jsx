@@ -91,7 +91,15 @@ const Section1 = () => {
 						>
 							<Timer></Timer>
 						</motion.div>
+						<motion.div
+							variants={fadeIn("up", "tween", 0.2, 1)}
+							className="mt-[8px] lg:mx-[32px] font-normal sm:text-[24px] text-[18px] text-center text-white"
+						>
+							{/* <Timer></Timer> */}
+							<h1 className="mt-[8px] lg:mx-[32px] font-bold sm:text-[32px] text-[24px] text-center text-yellow-300 space-mono-font">UTSAV 2023 is here!!!!</h1>
+						</motion.div>
 					</div>
+
 				</motion.div>
 			</section>
 		</>
@@ -110,10 +118,14 @@ const Timer = () => {
 		const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
 		const days = Math.floor(total / (1000 * 60 * 60 * 24));
 		return {
-			days: ("0" + days).slice(-2),
-			hours: ("0" + hours).slice(-2),
-			minutes: ("0" + minutes).slice(-2),
-			seconds: ("0" + seconds).slice(-2),
+			// days: ("0" + days).slice(-2),
+			// hours: ("0" + hours).slice(-2),
+			// minutes: ("0" + minutes).slice(-2),
+			// seconds: ("0" + seconds).slice(-2),
+			days: ("0"),
+			hours: ("0"), 
+			minutes: ("0"),
+			seconds: ("0"),
 		};
 	}
 	const [date, setDate] = useState(null);
