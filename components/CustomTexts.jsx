@@ -32,7 +32,7 @@ export const SponsorText = ({ title, textStyles }) => (
 		variants={textVariant2}
 		initial="hidden"
 		whileInView="show"
-		className={`mt-[8px] font-bold md:text-[34px] text-[30px] text-white ${textStyles}`}
+		className={`mt-[8px] mb-[10px] font-bold md:text-[34px] text-[30px] text-white ${textStyles}`}
 	>
 		{title}
 	</motion.h2>

@@ -25,7 +25,7 @@ const Sponsors = () => {
 							{/* <h1>{item["name"]}</h1> */}
 							<SponsorText
 								title={<>{item["name"]}</>}
-								textStyles="text-center cinzel-font text-hp-yellow"
+								textStyles="text-center cinzel-font text-amber-200"
 							/>
 							<a href={item["link"]} target="_blank" rel="noreferrer">
 								<div className="flex justify-center">
@@ -43,7 +43,7 @@ const Sponsors = () => {
 				<br />
 				<SponsorText
 					title={<>Flagship Sponsors</>}
-					textStyles="text-center cinzel-font text-hp-yellow"
+					textStyles="text-center cinzel-font text-amber-200"
 				/>
 				{/* <h2>Technicalol Sponsors</h2> */}
 				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-items-center">
@@ -69,7 +69,7 @@ const Sponsors = () => {
 				<br />
 				<SponsorText
 					title={<>Associate Sponsors</>}
-					textStyles="text-center cinzel-font text-hp-yellow"
+					textStyles="text-center cinzel-font text-amber-200"
 				/>
 				{/* <h2>Central Sponsors</h2> */}
 				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
@@ -93,7 +93,7 @@ const Sponsors = () => {
 				<br />
 				<SponsorText
 					title={<>Event Sponsors</>}
-					textStyles="text-center cinzel-font text-hp-yellow"
+					textStyles="text-center cinzel-font text-amber-200"
 				/>
 				{/* <h2>Event Sponsors</h2> */}
 				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-items-center">
@@ -116,7 +116,7 @@ const Sponsors = () => {
 				<br />
 					<SponsorText
 						title={<>Hospitality Sponsors</>}
-						textStyles="text-center cinzel-font text-hp-yellow"
+						textStyles="text-center cinzel-font text-amber-200"
 					/>
 					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-items-center">
 						<div
@@ -147,8 +147,28 @@ const Sponsors = () => {
 					<br />
 					<br />
 					<SponsorText
+						title={<>Energy Drink Partner</>}
+						textStyles="text-center cinzel-font text-amber-200"
+					/>
+					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 justify-items-center">
+						<div
+							key={"spon"}
+							//   className="col-12 col-md-auto text-center flex md:flex-col justify-center"
+						>
+							<br />
+							<a href={""} target="_blank" rel="noreferrer">
+								<img
+									src={"/logos/" +"red-bull_Amber.png"}
+									className="max-w-32 max-h-32"
+								></img>
+							</a>
+						</div>
+						</div>
+					<br />
+					<br />
+					<SponsorText
 						title={<>Sustainibility Sponsor</>}
-						textStyles="text-center cinzel-font text-hp-yellow"
+						textStyles="text-center cinzel-font text-amber-200"
 					/>
 					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 justify-items-center">
 						<div
@@ -168,7 +188,7 @@ const Sponsors = () => {
 					<br />
 					<SponsorText
 						title={<>Radio Partner</>}
-						textStyles="text-center cinzel-font text-hp-yellow"
+						textStyles="text-center cinzel-font text-amber-200"
 					/>
 					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 justify-items-center">
 						<div
@@ -188,7 +208,7 @@ const Sponsors = () => {
 					<br />
 					<SponsorText
 						title={<>Social Media Partner</>}
-						textStyles="text-center cinzel-font text-hp-yellow"
+						textStyles="text-center cinzel-font text-amber-200"
 					/>
 					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 justify-items-center">
 						<div
