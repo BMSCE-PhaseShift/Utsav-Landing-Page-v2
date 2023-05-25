@@ -2,7 +2,7 @@ import cat1 from "../sponlogos/cat1.json";
 import cat2 from "../sponlogos/cat2.json";
 import cat3 from "../sponlogos/cat3.json";
 import cat4 from "../sponlogos/cat4.json";
-import cat5 from "../sponlogos/cat5.json";
+// import cat5 from "../sponlogos/cat5.json";
 import { SponsorText } from "../components";
 
 const Sponsors = () => {
@@ -42,11 +42,11 @@ const Sponsors = () => {
 				<br />
 				<br />
 				<SponsorText
-					title={<>Technical Sponsors</>}
+					title={<>Flagship Sponsors</>}
 					textStyles="text-center cinzel-font text-hp-yellow"
 				/>
 				{/* <h2>Technicalol Sponsors</h2> */}
-				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-items-center">
 					{Object.keys(cat2).map((item, index) => (
 						<div
 							key={"spon" + index}
@@ -68,11 +68,11 @@ const Sponsors = () => {
 				<br />
 				<br />
 				<SponsorText
-					title={<>Central Sponsors</>}
+					title={<>Associate Sponsors</>}
 					textStyles="text-center cinzel-font text-hp-yellow"
 				/>
 				{/* <h2>Central Sponsors</h2> */}
-				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
 					{Object.keys(cat3).map((item, index) => (
 						<div
 							key={"spon" + index}
@@ -97,7 +97,7 @@ const Sponsors = () => {
 				/>
 				{/* <h2>Event Sponsors</h2> */}
 				<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-items-center">
-					{Object.keys(cat4).map((item, index) => (
+					{cat4.map((item, index) => (
 						<div
 							key={"spon" + index}
 							//   className="col-12 col-md-auto text-center flex md:flex-col justify-center"
@@ -111,20 +111,101 @@ const Sponsors = () => {
 							</a>
 						</div>
 					))}
-
-					{cat5.map((item, index) => (
+				</div>
+				<br />
+				<br />
+					<SponsorText
+						title={<>Hospitality Sponsors</>}
+						textStyles="text-center cinzel-font text-hp-yellow"
+					/>
+					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-items-center">
 						<div
-							vkey={"spon" + index}
-							// className="col-12 col-md-auto text-center flex md:flex-col justify-center"
+							key={"spon"}
+							//   className="col-12 col-md-auto text-center flex md:flex-col justify-center"
 						>
 							<br />
-							<img
-								src={"/logos/cat 5/" + item}
-								className="max-w-32 max-h-32"
-							></img>
+							<a href={""} target="_blank" rel="noreferrer">
+								<img
+									src={"/logos/" +"ITC-Limited_Hospitality.jpg"}
+									className="max-w-32 max-h-32"
+								></img>
+							</a>
 						</div>
-					))}
-				</div>
+						<div
+							key={"spon"}
+							//   className="col-12 col-md-auto text-center flex md:flex-col justify-center"
+						>
+							<br />
+							<a href={""} target="_blank" rel="noreferrer">
+								<img
+									src={"/logos/" +"Daadis_Hospitality.png"}
+									className="max-w-32 max-h-32"
+								></img>
+							</a>
+						</div>
+					</div>
+					<br />
+					<br />
+					<SponsorText
+						title={<>Sustainibility Sponsor</>}
+						textStyles="text-center cinzel-font text-hp-yellow"
+					/>
+					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 justify-items-center">
+						<div
+							key={"spon"}
+							//   className="col-12 col-md-auto text-center flex md:flex-col justify-center"
+						>
+							<br />
+							<a href={""} target="_blank" rel="noreferrer">
+								<img
+									src={"/logos/" +"Eat-Raja_sustainability.jpg"}
+									className="max-w-32 max-h-32"
+								></img>
+							</a>
+						</div>
+					</div>
+					<br />
+					<br />
+					<SponsorText
+						title={<>Radio Partner</>}
+						textStyles="text-center cinzel-font text-hp-yellow"
+					/>
+					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 justify-items-center">
+						<div
+							key={"spon"}
+							//   className="col-12 col-md-auto text-center flex md:flex-col justify-center"
+						>
+							<br />
+							<a href={""} target="_blank" rel="noreferrer">
+								<img
+									src={"/logos/" +"indigo-music_Hospitality.jpg"}
+									className="max-w-32 max-h-32"
+								></img>
+							</a>
+						</div>
+					</div>
+					<br />
+					<br />
+					<SponsorText
+						title={<>Social Media Partner</>}
+						textStyles="text-center cinzel-font text-hp-yellow"
+					/>
+					<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4 justify-items-center">
+						<div
+							key={"spon"}
+							//   className="col-12 col-md-auto text-center flex md:flex-col justify-center"
+						>
+							<br />
+							<a href={""} target="_blank" rel="noreferrer">
+								<img
+									src={"/logos/" +"Namma-Karnataka_social.jpg"}
+									className="max-w-32 max-h-32"
+								></img>
+							</a>
+						</div>
+					</div>
+
+
 			</div>
 		</div>
 	);

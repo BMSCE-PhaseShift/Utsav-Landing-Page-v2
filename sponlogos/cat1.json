@@ -1,23 +1,13 @@
 [
-  {
-    "name": "Title Sponsor",
-    "src": "mercedes.png",
-    "link": "https://www.mbrdi.co.in/"
-  },
-  {
-    "name": "Gold Sponsor",
-    "src": "alpha.png",
-    "link": "https://www.adtl.co.in/"
-  },
-
-  {
-    "name": "Silver Sponsor",
-    "src": "Bosch.png",
-    "link": "https://www.bosch.com/"
-  },
-  {
-    "name": "Bronze Sponsor",
-    "src": "hpe.png",
-    "link": "https://www.hpe.com/us/en/home.html"
-  }
+    {
+        "name":"Title Sponsor",
+        "src":"IGS_Title.jpg",
+        "link":"https://igsindia.net/"
+    },
+    {
+        "name":"Co-Sponsor",
+        "src":"IValue-Info-Solutions_Sapphire.jpg",
+        "link":"https://ivaluegroup.com/"
+    }
+    
 ]
