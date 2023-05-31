@@ -21,6 +21,10 @@ p {
 
 }
 
+.flex {
+  opacity: 1 !important;
+}
+
 .layer {
   z-index: 100;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 1) 100%);
