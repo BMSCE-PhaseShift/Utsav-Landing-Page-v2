@@ -32,86 +32,75 @@ const Patrons = () => {
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-center items-center flex-col md:flex-row"
+						className="flex flex-wrap justify-center items-center flex-col md:flex-row gap-4 mx-auto"
 					>
 						{patrons.map((patron, index) => (
-							<InsightCard
+							<Card 
 								key={index}
-								index={index}
 								name={patron.name}
 								role={patron.role}
-								imgStyles="w-[150px] h-[150px] object-contain"
-								textStyles="text-white text-center"
-								containerStyles="w-[300px] h-[300px] flex flex-col justify-center items-center mx-[20px] my-[20px] bg-hp-blue rounded-[16px] shadow-lg"
+								img={patron.img}
 							/>
 						))}
+
 					</motion.div>
 				</motion.div>
 
-				<motion.div className="mb-[25px]">
+				<motion.div className="mb-[25px] mt-[65px]">
 					<SubtitleText
 						title={<>Advisory Committee</>}
 						textStyles="text-center cinzel-font text-blue-400 font-bold text-[20px]"
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-around items-center flex-col md:flex-row"
+						className="flex flex-wrap justify-around items-center flex-col md:flex-row gap-4 mx-auto"
 					>
 						{adv.map((patron, index) => (
-							<InsightCard
+							<Card 
 								key={index}
-								index={index}
 								name={patron.name}
 								role={patron.role}
-								imgStyles="w-[150px] h-[150px] object-contain"
-								textStyles="text-white text-center"
-								containerStyles="w-[300px] h-[300px] flex flex-col justify-center items-center mx-[20px] my-[20px] bg-hp-blue rounded-[16px] shadow-lg"
+								img={patron.img}
 							/>
 						))}
 					</motion.div>
 				</motion.div>
 
-				<motion.div className="mb-[25px]">
+				<motion.div className="mb-[25px] mt-[65px]">
 					<SubtitleText
 						title={<>Faculty Core Committee</>}
 						textStyles="text-center cinzel-font text-blue-400 font-bold text-[20px]"
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-center items-center  flex-col md:flex-row"
+						className="flex flex-wrap justify-around items-center flex-col md:flex-row gap-4 mx-auto"
 					>
 						{fac.map((patron, index) => (
-							<InsightCard
+							<Card 
 								key={index}
-								index={index}
 								name={patron.name}
 								role={patron.role}
-								imgStyles="w-[150px] h-[150px] object-contain"
-								textStyles="text-white text-center"
-								containerStyles="w-[300px] h-[300px] flex flex-col justify-center items-center mx-[20px] my-[20px] bg-hp-blue rounded-[16px] shadow-lg"
+								img={patron.img}
 							/>
 						))}
 					</motion.div>
 				</motion.div>
 
-				<motion.div className="mb-[25px]">
+				<motion.div className="mb-[25px] mt-[65px]">
 					<SubtitleText
 						title={<>Student Core Committee</>}
 						textStyles="text-center cinzel-font text-blue-400 font-bold text-[20px]"
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-center items-center flex-col md:flex-row"
+						className="flex flex-wrap justify-around items-center flex-col md:flex-row gap-4 mx-auto"
 					>
 						{stu.map((patron, index) => (
-							<InsightCard
+							<Card 
 								key={index}
-								index={index}
-								name={patron}
+								name={patron.name}
 								role={patron.role}
-								imgStyles="w-[150px] h-[150px] object-contain"
-								textStyles="text-white text-center"
-								containerStyles="w-[300px] h-[300px] flex flex-col justify-center items-center mx-[20px] my-[20px] bg-hp-blue rounded-[16px] shadow-lg"
+								img={patron.img}
 							/>
 						))}
 					</motion.div>
@@ -122,3 +111,18 @@ const Patrons = () => {
 };
 
 export default Patrons;
+
+
+const Card = ({ name, role, img }) => {
+	return (
+	  <div className="w-full md:w-1/2 lg:w-1/4 p-4 text-center">
+		<img
+		  src={img}
+		  alt={img}
+		  className="w-[230px] h-[270px] max-w-[230px] max-h-[270px] rounded-lg mx-auto"
+		/>
+		<p className="text-white text-lg text-center">{name}</p>
+		<p className="text-gray-400 text-sm text-center">{role}</p>
+	  </div>
+	);
+  };
