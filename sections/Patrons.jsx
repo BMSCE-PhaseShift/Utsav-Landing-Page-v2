@@ -119,7 +119,7 @@ const Card = ({ name, role, img }) => {
 		<img
 		  src={img}
 		  alt={img}
-		  className="w-[230px] h-[270px] max-w-[230px] max-h-[270px] rounded-lg mx-auto"
+		  className="w-[230px] h-[270px] max-w-[230px] max-h-[270px] rounded-lg mx-auto object-cover"
 		/>
 		<p className="text-white text-lg text-center">{name}</p>
 		<p className="text-gray-400 text-sm text-center">{role}</p>
