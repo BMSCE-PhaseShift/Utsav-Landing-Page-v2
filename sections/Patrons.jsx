@@ -53,7 +53,7 @@ const Patrons = () => {
 					/>
 					<motion.div
 						variants={fadeIn("up", "tween", 0.3, 1)}
-						className="flex flex-wrap justify-around items-center flex-col md:flex-row gap-4 mx-auto"
+						className="flex flex-wrap justify-around items-center text-center flex-col md:flex-row gap-4 mx-auto"
 					>
 						{adv.map((patron, index) => (
 							<Card 
