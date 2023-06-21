@@ -20,8 +20,6 @@ const styles = {
         'md:w-[212px] sm:w-[80px] w-[60px] md:h-[108px] sm:h-[48px] h-[38px] md:border-[18px] border-[9px] rounded-r-[50px] border-white sm:mx-2 mx-[6px]',
     heroTitle:
         'font-bold lg:text-[100px] md:text-[60px] sm:text-[44px] text-[44px] text-white',
-
-
 };
 
 export default styles;

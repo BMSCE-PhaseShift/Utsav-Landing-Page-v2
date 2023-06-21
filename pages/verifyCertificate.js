@@ -1,50 +1,66 @@
 import React, { useState } from 'react';
+import styles from "../styles";
+import { motion } from "framer-motion";
+import { TitleText } from "../components";
+import { fadeIn, staggerContainer } from "../utils/motion";
+import { Navbar } from '../components';
 
 const VerifyCertificate = () => {
   const [showIframe, setShowIframe] = useState(false);
   const [code, setCode] = useState('');
 
-  const handleFormSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform any necessary actions with the code input
-    setShowIframe(true);
+    const search = jsonData.find((file) => file.filename === `${code}.pdf`);
+    if (search) {
+      console.log(search);
+      setMatchingFile(search);
+      setShowIframe(true);
+    }
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <header className="bg-blue-500 py-4 text-white text-center w-full">
-        <h1 className="text-2xl font-bold">Verify Certificate</h1>
-      </header>
-      <div className="mt-8">
-        <form onSubmit={handleFormSubmit}>
-          <input
-            type="text"
-            className="rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter code"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-          />
-          <button
-            type="submit"
-            className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    <>
+      <div className='my-bg overflow-hidden'>
+        <section className={`relative z-10 h-screen`}>
+          <motion.div
+            className={`flex flex-col mb-8 `}
           >
-            Submit
-          </button>
-        </form>
-      </div>
-      {/* Show the embedded Google Drive PDF viewer iframe when showIframe is true */}
-      {showIframe && (
-        <div className="mt-8">
-          <iframe
-            src="https://drive.google.com/file/d/1K6teX8llxA_paLIlR-a1TJhq9Yx1hFrC/preview"
-            width="640"
-            height="480"
-            title="Embedded PDF Viewer"
-            allowFullScreen
-          ></iframe>
-        </div>
-      )}
-    </div>
+            <TitleText
+              title={<>Verify Certificate</>}
+              textStyles="text-center cinzel-font text-hp-yellow mt-8"
+            />
+            <div className=" flex flex-row justify-center items-center gap-4 mt-6">
+              <motion.div
+                className="lg:mx-[32px] font-normal text-[18px] text-center text-white"
+              >
+                <input type="text" placeholder="UR23OC033" value={code} onChange={(e) => setCode(e.target.value)} className="input input-bordered input-primary w-1/2 h-1/2 p-4 px-10 rounded-lg" />
+              </motion.div>
+              <button
+                onClick={handleSubmit}
+                className="w-[100px] md:w-[100px] bg-transparent 
+                          hover:bg-yellow-300 text-yellow-200 
+                          font-semibold hover:text-black p-4 
+                          border border-yellow-500 
+                          hover:border-transparent 
+                          btn
+                          h-1/2
+                          rounded"
+              >
+                Submit
+              </button>
+            </div>
+
+            <div className="container mx-auto mt-8">
+              <iframe
+                className="responsive-iframe"
+                src="https://drive.google.com/file/d/1K6teX8llxA_paLIlR-a1TJhq9Yx1hFrC/preview"
+              ></iframe>
+            </div>
+          </motion.div>
+        </section>
+      </div >
+    </>
   );
 };
 
