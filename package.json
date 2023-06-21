@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start -p 6969",
+    "lint": "next lint",
+    "preserve": "npm run build",
+    "serve": "NODE_ENV=production&&pm2 start \"npm run start\" --name landing"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
