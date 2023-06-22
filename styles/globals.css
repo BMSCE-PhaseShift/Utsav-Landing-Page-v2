@@ -81,12 +81,10 @@ p {
 }
 
 .my-bg {
-  /* background: #101016; */
-  background: #000000;
-  /* background: linear-gradient(90deg,
-    #000000,
-    #000000 
-  ) */
+  background-image: linear-gradient(270deg,
+        hsl(240, 95%, 59%),
+        hsl(240deg, 16%, 7%) 100%);
+    /* filter: blur(10px); */
 }
 
 /* my gradient */

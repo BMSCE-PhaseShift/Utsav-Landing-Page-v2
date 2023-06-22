@@ -46,7 +46,7 @@ const VerifyCertificate = () => {
               <motion.div
                 className="lg:mx-[32px] font-normal text-[18px] text-center text-white"
               >
-                <input type="text" placeholder="UR23OC000" value={code} onChange={(e) => setCode(e.target.value)} className="input input-bordered input-primary w-1/2 h-1/2 p-4 px-10 rounded-lg" />
+                <input type="text" placeholder="UR23OC000" value={code} onChange={(e) => setCode(e.target.value)} className="input input-bordered input-secondary w-1/2 h-1/2 p-4 px-10 rounded-lg max-w-xs" />
               </motion.div>
               <button
                 onClick={handleSubmit}
