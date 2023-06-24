@@ -3,15 +3,16 @@ import styles from "../styles";
 import { motion } from "framer-motion";
 import { TitleText,SubtitleText } from "../components";
 import { fadeIn, staggerContainer } from "../utils/motion";
-import jsonData from "../utils/file_information.json";
+// import jsonData from "../utils/file_information.json";
+import axios from "axios";
 
-const VerifyCertificate = () => {
+const VerifyCertificate = ({data}) => {
   const [showIframe, setShowIframe] = useState(false);
   const [code, setCode] = useState('');
   const [matchingFile, setMatchingFile] = useState({});
   const handleSubmit = (event) => {
     event.preventDefault();
-    const search = jsonData.find((file) => file.filename === `${code}.pdf`);
+    const search = data.find((file) => file.filename === `${code}.pdf`);
     if (search) {
       console.log(search);
       setMatchingFile(search);
@@ -80,3 +81,16 @@ const VerifyCertificate = () => {
 };
 
 export default VerifyCertificate;
+
+
+export async function getServerSideProps(context) {
+  const response = await fetch('http://139.59.14.152:3000/file-information');
+  
+
+  const data = await response.json();
+  return{
+      props:{
+          data
+      }
+  }
+}
